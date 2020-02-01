@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color='red' class="Topcss">
+    
+    <ion-title class="ion-padding">
+      <ion-icon name="egg"></ion-icon>AddPost</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-item>
+  <ion-label position="floating" class="ion-padding">Name:</ion-label>
+  <ion-input tyle="text" [(ngModel)]="NameChange" autocomplete="off"></ion-input>
+</ion-item>
+
+
+
+<ion-item>
+  <ion-label position="floating" class="ion-padding">Notes on bird:</ion-label>
+  <ion-input type="text" [(ngModel)]="NoteChange"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="floating" class="ion-padding">Rarity Of the bird:</ion-label><p></p>
+  <ion-range (ionChange)="RareChange($event)" min="1" max="3" step="1" snaps="true" pin="true"></ion-range>
+ 
+</ion-item>
+
+<ion-item>
+  <ion-label>Send Geolocation:</ion-label>
+  <ion-toggle (click)="SendGeo()" ></ion-toggle>
+</ion-item>
+
+
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-row>
+    <ion-col size="3" >
+       <ion-button (click)="GoBack()"><ion-icon name="close"></ion-icon>Back</ion-button>
+    </ion-col>
+    <ion-col size="3" size-lg offset="6">
+      <ion-button (click)="Submit()">Post<ion-icon name="send"></ion-icon></ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

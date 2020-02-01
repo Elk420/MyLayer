@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color='red' class="Topcss">
+    <ion-title class="ion-padding">
+      <ion-icon name="egg"></ion-icon>
+      Bird-Spot Coffee Shop
+      
+ 
+      <ion-row>
+  
+        <ion-col size="4" size-lg offset="8" >
+         
+            
+          <ion-select okText="Sort" (ionChange)="SortingConsole($event)"  placeholder="Sort">
+            <ion-select-option value="D" >Date</ion-select-option>
+            <ion-select-option value="R" >Rarity</ion-select-option>
+            <ion-select-option value="N" >Bird Name</ion-select-option>
+            <ion-select-option value="U" >User Note</ion-select-option>         
+
+          </ion-select>
+     
+
+        </ion-col>
+      </ion-row>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color='red' class="BackC">
+
+
+
+
+
+  <ion-list color='success' class="BackC" *ngFor="let data of data"> 
+    <ion-card color='success' class="MessageC">Name:{{data.name}} <p></p>Rarety:{{data.rare}} <p></p> Note:{{data.note}} <p></p>Latitude:{{data.Long}} <p></p> Longitude:{{data.Lat}} <p></p> TimeStamp: {{data.date}}</ion-card>
+
+
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-button color="success" expand="block" (click)="GoToAdd()">ADD POST</ion-button>
+</ion-footer>
+
+
